@@ -1,0 +1,35 @@
+---
+import type { CertificationProps } from "@types";
+import Section from "./Section.astro";
+
+interface Props {
+  certifications: CertificationProps[];
+}
+
+const { certifications } = Astro.props;
+---
+
+<Section text="Certifications" href="certifications">
+  <ul class="grid gap-6 sm:grid-cols-2 md:grid-cols-2">
+    {certifications.map((cert) => (
+      <li 
+        class="rounded-md border border-neutral/20 bg-zinc-50 p-5 shadow-sm transition-shadow hover:shadow-md dark:bg-black dark:border-neutral-800"
+      >
+        {cert.image && (
+          <img 
+            src={cert.image} 
+            alt={`${cert.title} badge`} 
+            class="mb-4 h-16 w-auto object-contain"
+            loading="lazy"
+          />
+        )}
+        <h3 class="mb-1 text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+          {cert.title}
+        </h3>
+        <p class="text-sm text-neutral-700 dark:text-neutral-400">
+          {cert.issuer} &mdash; <time datetime={cert.date}>{cert.date}</time>
+        </p>
+      </li>
+    ))}
+  </ul>
+</Section>

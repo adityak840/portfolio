@@ -7,11 +7,15 @@ import Projects from "@components/Projects.astro";
 import About from "@components/About.astro";
 
 import "../styles/global.css";
+import Certifications from "@components/Certifications.astro";
+import Skills from "@components/Skills.astro";
 ---
 
 <Layout>
   <Hero {...SITE_CONTENT.hero} />
   <Experience experience={SITE_CONTENT.experience} />
+  <Certifications certifications={SITE_CONTENT.certifications} />
   <Projects projects={SITE_CONTENT.projects} />
   <About {...SITE_CONTENT.about} name={SITE_CONTENT.hero.name} />
+  <Skills skills={SITE_CONTENT.skills} />
 </Layout>
