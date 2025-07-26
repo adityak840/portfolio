@@ -17,6 +17,9 @@ export interface SiteContent {
 
 export interface HeroProps {
   name: string;
+  linkedin: string;
+  github:string;
+  location: string;
   specialty: string;
   summary: string;
   email: string;

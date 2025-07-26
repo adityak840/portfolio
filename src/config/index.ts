@@ -1,10 +1,10 @@
 import type { SiteConfig, SiteContent } from "../types";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Alejandro Múnez — Mobile & Web Developer",
-  author: "Alejandro Múnez Cuntez",
+  title: "Aditya Khandelwal - Full Stack Developer",
+  author: "Aditya Khandelwal",
   description:
-    "Software Engineer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
+    "Versatile full-stack developer skilled in building scalable web applications.",
   lang: "en",
   siteLogo: "/alejandro-small.jpg",
   navLinks: [
@@ -25,12 +25,14 @@ export const SITE_CONFIG: SiteConfig = {
 
 export const SITE_CONTENT: SiteContent = {
   hero: {
-    name: "Alejandro Múnez",
-    specialty: "Mobile & Web Developer",
-    summary:
-      "Developer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
-    email: "example@email.com",
-  },
+  name: "Aditya Khandelwal",
+  specialty: "Full Stack Developer",
+  location: "Pune, Maharashtra",
+  summary: "Versatile full-stack developer skilled in building scalable web applications using React.js, Next.js, Node.js, and Golang. Passionate about creating user-focused solutions, integrating modern APIs, and continuously pushing the boundaries of technical innovation.",
+  email: "khandelwal.aditya840@gmail.com",
+  linkedin: "https://linkedin.com/in/yourusername",
+  github: "https://github.com/yourusername",
+},
   experience: [
     {
       company: "Zalmart",
