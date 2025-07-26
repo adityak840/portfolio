@@ -12,56 +12,67 @@ export const SITE_CONFIG: SiteConfig = {
     { text: "Projects", href: "#projects" },
     { text: "About", href: "#about" },
   ],
-  socialLinks: [
-    { text: "Twitter", href: "https://github.com/immois/astro-zen" },
-    { text: "LinkedIn", href: "https://github.com/immois/astro-zen" },
-    { text: "Github", href: "https://github.com/immois/astro-zen" },
-    { text: "Youtube", href: "https://github.com/immois/astro-zen" },
-    { text: "Dribbble", href: "https://github.com/immois/astro-zen" },
-  ],
   socialImage: "/zen-og.png",
   canonicalURL: "https://astro-zen.vercel.app",
 };
 
 export const SITE_CONTENT: SiteContent = {
   hero: {
-  name: "Aditya Khandelwal",
-  specialty: "Full Stack Developer",
-  location: "Pune, Maharashtra",
-  summary: "Versatile full-stack developer skilled in building scalable web applications using React.js, Next.js, Node.js, and Golang. Passionate about creating user-focused solutions, integrating modern APIs, and continuously pushing the boundaries of technical innovation.",
-  email: "khandelwal.aditya840@gmail.com",
-  linkedin: "https://linkedin.com/in/yourusername",
-  github: "https://github.com/yourusername",
-},
+    name: "Aditya Khandelwal",
+    specialty: "Full Stack Developer",
+    location: "Pune, Maharashtra",
+    summary:
+      "Versatile full-stack developer skilled in building scalable web applications using React.js, Next.js, Node.js, and Golang. Passionate about creating user-focused solutions, integrating modern APIs, and continuously pushing the boundaries of technical innovation.",
+    email: "khandelwal.aditya840@gmail.com",
+    linkedin: "https://www.linkedin.com/in/khandelwaladitya-/",
+    github: "https://github.com/adityak840",
+  },
   experience: [
     {
-      company: "Zalmart",
-      position: "Lead Android Developer",
-      startDate: "May 2018",
-      endDate: "Sept 2020",
+      company: "Calfus Inc.",
+      position: "Associate Software Engineer",
+      startDate: "Jan 2025",
+      endDate: "Present",
       summary: [
-        "Implemented advanced memory management and code optimization techniques, resulting in a reduction in application load time by 40% and a decrease in crashes by 25%. This significantly improved user experience and increased user retention by 20%.",
-        "I led a team of developers in building and integrating new features using Jetpack Android components such as LiveData and ViewModel. This enabled us to build scalable and maintainable applications, reducing the crash rate by 20% and speeding up the time to delivery of new features by 15%.",
-        "Integrated Google Pay for in-app purchases, resulting in a 35% increase in mobile transaction revenue. Additionally, implemented Firebase Analytics to gain insights into user behavior, enabling data-driven optimizations and a 30% increase in user retention.",
+        "Contributed across the full stack to two major products, focusing on both product functionality and system architecture.",
+        "Enhanced and maintained a background check platform, improving the efficiency of candidate adjudication workflows.",
+        "Sole UI developer for Mvue.ai, Agentic-AI Cash Flow Optimization Tool: led UI design, database schema planning, and microservices integration.",
+        "Created Agentic AI-based features for automated financial insights.",
       ],
     },
     {
-      company: "Bankit",
-      position: "Mobile Developer",
-      startDate: "Feb 2017",
-      endDate: "May 2018",
+      company: "Calfus Inc.",
+      position: "Software Development Intern",
+      startDate: "Aug 2023",
+      endDate: "Dec 2023",
       summary: [
-        "I designed and developed a mobile application using Flutter, allowing it to be deployed on both Android and iOS with a single codebase. This reduced development time by 50% and maintenance costs by 30%, facilitating a consistent user experience on both platforms.",
-        "I integrated biometric authentication and data encryption, significantly improving the security of user data. This implementation resulted in a 40% increase in user trust and a 25% reduction in unauthorized access attempts.",
+        "Developed an Applicant Tracking System using React.js, Golang, and MongoDB, which expedited the processing of HR candidates.",
+        "Built an SQL Connect Tool in React.js, enhancing the efficiency of SQL queries for multiple applications.",
+        "Delivered front-end solutions for several in-house projects.",
       ],
     },
     {
-      company: "Driveer",
-      position: "Frontend Developer",
-      startDate: "Jun 2015",
-      endDate: "Oct 2016",
-      summary:
-        "Developed and integrated a real-time vehicle tracking system using WebSockets, improving accuracy and data update in the application. This functionality increased user satisfaction by 30% and reduced customer service inquiries by 25%.",
+      company: "Computer Society of India – VIT Student Chapter",
+      position: "Projects Head",
+      startDate: "Nov 2023",
+      endDate: "Nov 2024",
+      summary: [
+        "Mentored 40+ students and led flagship chapter projects leveraging project management tools.",
+        "Designed 'FFCS Planner' for course simulation and implemented the Laser Tag event slot selection system.",
+        "Promoted open source through the 'Fork This' event and enabled single sign-on (SSO) for CSI web platforms.",
+      ],
+    },
+    {
+      company: "Computer Society of India – VIT Student Chapter",
+      position: "Core Member",
+      startDate: "Mar 2022",
+      endDate: "Nov 2023",
+      summary: [
+        "Built and deployed Discord bot 'Spacey' (1,000+ users) and event web apps for chapter events.",
+        "Developed laser tag event platform (2,000+ users) and managed authentication with CSI Accounts.",
+        "Created event web pages for Discover.JS and Hackstory using React.js, Next.js, Tailwind CSS, Framer Motion.",
+        "Supported end-to-end event organization, registration, and communication.",
+      ],
     },
   ],
   projects: [
@@ -89,12 +100,10 @@ export const SITE_CONTENT: SiteContent = {
   ],
   about: {
     description: `
-      Hi, I’m Alejandro Múnez, a passionate Mobile and Web Developer with a knack for crafting seamless digital experiences. With a strong background in both Android and iOS development, as well as front-end web technologies, I thrive in the intersection where creativity meets technology.
+    Hi, I’m Aditya Khandelwal—a versatile Full-Stack Developer passionate about delivering scalable, high-performing web applications. I specialize in both front-end frameworks like React.js and Next.js and robust back-end systems using Node.js and Golang, with a proven track record of architecting solutions for business-critical products.
 
-      Over the years, I’ve honed my skills in building robust, user-friendly applications that not only meet the needs of users but also push the boundaries of what’s possible. My projects range from innovative mobile applications to responsive web designs, all with a focus on performance, security, and scalability.
-    `,
+    My experience spans building intuitive, user-friendly interfaces with Material UI and Tailwind CSS, integrating third-party APIs, and optimizing databases with MongoDB and SQL. I thrive on solving complex problems, collaborating on impactful projects, and continuously exploring new technologies to drive innovation and excellence in every project I undertake.
+  `,
     image: "/alejandro-big.jpg",
   },
 };
-
-// #5755ff
