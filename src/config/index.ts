@@ -9,13 +9,14 @@ export const SITE_CONFIG: SiteConfig = {
   siteLogo: "/aditya-small.png",
   navLinks: [
     { text: "Experience", href: "#experience" },
+    { text: "Technical Leadership & Mentorship", href: "#technical" },
     { text: "Certifications", href: "#certifications" },
     { text: "Projects", href: "#projects" },
     { text: "About", href: "#about" },
     { text: "Technical Skills", href: "#skills" },
   ],
-  socialImage: "/zen-og.png",
-  canonicalURL: "https://astro-zen.vercel.app",
+  socialImage: "/aditya-small.png",
+  canonicalURL: "https://adityakhandelwal.me",
 };
 
 export const SITE_CONTENT: SiteContent = {
@@ -24,7 +25,7 @@ export const SITE_CONTENT: SiteContent = {
     specialty: "Full Stack Developer",
     location: "Pune, Maharashtra",
     summary:
-      "Versatile full-stack developer skilled in building scalable web applications using React.js, Next.js, Node.js, and Golang. Passionate about creating user-focused solutions, integrating modern APIs, and continuously pushing the boundaries of technical innovation.",
+      "Versatile full-stack developer skilled in building scalable web applications. Passionate about creating user-focused solutions, integrating modern APIs, and continuously pushing the boundaries of technical innovation.",
     email: "khandelwal.aditya840@gmail.com",
     linkedin: "https://www.linkedin.com/in/khandelwaladitya-/",
     github: "https://github.com/adityak840",
@@ -37,9 +38,22 @@ export const SITE_CONTENT: SiteContent = {
       endDate: "Present",
       summary: [
         "Contributed across the full stack to two major products, focusing on both product functionality and system architecture.",
-        "Enhanced and maintained a background check platform, improving the efficiency of candidate adjudication workflows.",
-        "Sole UI developer for Mvue.ai, Agentic-AI Cash Flow Optimization Tool: led UI design, database schema planning, and microservices integration.",
-        "Created Agentic AI-based features for automated financial insights.",
+        {
+          label: "Background Check Platform",
+          bullets: [
+            "Enhanced and maintained the codebase used by enterprise clients.",
+            "Developed and deployed the candidate adjudication module to streamline verification workflows.",
+          ],
+        },
+        {
+          label:
+            "Mvue.ai – Agentic-AI Cash Flow Optimization Tool (Founding Engineer)",
+          bullets: [
+            "Led frontend architecture as sole UI developer, building a scalable, responsive multi-tenant interface.",
+            "Deployed at La Clínica de La Raza Hospitals in California with additional enterprise clients in the pipeline.",
+            "Co-designed the system architecture including database schemas and agentic microservices.",
+          ],
+        },
       ],
     },
     {
@@ -53,6 +67,8 @@ export const SITE_CONTENT: SiteContent = {
         "Delivered front-end solutions for several in-house projects.",
       ],
     },
+  ],
+  technical: [
     {
       company: "Computer Society of India – VIT Student Chapter",
       position: "Projects Head",
@@ -79,25 +95,27 @@ export const SITE_CONTENT: SiteContent = {
   ],
   projects: [
     {
-      name: "Spotifu Music",
-      summary: "A music streaming app that emulates Spotify's core features.",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/spotifu.png",
+      name: "File Transfer App",
+      summary:
+        "Real-time file transfer app enabling drag-and-drop sharing between devices via WebSockets",
+      linkPreview: "https://filetransfer.adityakhandelwal.me",
+      linkSource: [
+        {
+          label: "Frontend Code",
+          url: "https://github.com/adityak840/file-transfer-frontend",
+        },
+        {
+          label: "Backend Code",
+          url: "https://github.com/adityak840/file-transfer-backend",
+        },
+      ],
+      image: "/filetransfer.png",
     },
     {
-      name: "Shopp App",
-      summary: "An e-commerce platform that replicates Shopify's key features.",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/shopify-clon.png",
-    },
-    {
-      name: "ClonTagram",
-      summary: "A social network that replicates the features of Instagram",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/clone-ig.png",
+      name: "Grievances",
+      summary:
+        "Responsive Grievance Portal supporting 10,000+ students and faculty.",
+      image: "/grievance.png",
     },
   ],
   about: {
@@ -120,12 +138,12 @@ export const SITE_CONTENT: SiteContent = {
     {
       category: "Languages",
       items: [
-        { name: "Golang", icon: "simple-icons:go" },
+        { name: "JavaScript", icon: "mdi:language-javascript" },
+        { name: "TypeScript", icon: "mdi:language-typescript" },
         { name: "Python", icon: "mdi:language-python" },
         { name: "Java", icon: "mdi:language-java" },
         { name: "C++", icon: "mdi:language-cpp" },
-        { name: "JavaScript", icon: "mdi:language-javascript" },
-        { name: "TypeScript", icon: "mdi:language-typescript" },
+        { name: "Golang", icon: "simple-icons:go" },
       ],
     },
     {
@@ -137,7 +155,7 @@ export const SITE_CONTENT: SiteContent = {
         { name: "React Native", icon: "mdi:react" },
         { name: "Material UI", icon: "mdi:palette" },
         { name: "Tailwind CSS", icon: "simple-icons:tailwindcss" },
-        { name: "Shadcn", icon: "mdi:code-tags" },
+        { name: "Shadcn", icon: "shadcn" },
       ],
     },
     {
@@ -167,6 +185,7 @@ export const SITE_CONTENT: SiteContent = {
       items: [
         { name: "RESTful APIs", icon: "mdi:api" },
         { name: "Microservices", icon: "mdi:cloud-braces" },
+        { name: "Socket.IO", icon: "socketIo" },
       ],
     },
   ],

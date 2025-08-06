@@ -2,6 +2,8 @@
 import type { SkillProps } from "@types";
 import Section from "./Section.astro";
 import { Icon } from "astro-icon/components";
+import SocketIO from "@icons/SocketIO.astro";
+import Shadcn from "@icons/Shadcn.astro";
 
 interface Props {
   skills: SkillProps[];
@@ -21,16 +23,23 @@ const { skills } = Astro.props;
           <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {group.items.map((skill) => (
               <li class="flex items-center gap-3 rounded-lg border border-neutral-200 bg-white p-3 shadow-sm transition hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
-                {skill.icon ? (
+                {skill.icon === "socketIo" ? (
+                  <div class="h-[1.75em] w-[1.75em] fill-blue-500 dark:fill-cyan-400">
+                    <SocketIO />
+                  </div>
+                ) : skill.icon === "shadcn" ? (
+                  <div class="h-[1.75em] w-[1.75em] fill-blue-500 dark:fill-cyan-400">
+                    <Shadcn />
+                  </div>
+                ) : (
                   <Icon
                     name={skill.icon}
                     size="1.75em"
                     class="text-blue-500 dark:text-cyan-400"
                     aria-label={skill.name}
                   />
-                ) : (
-                  <div class="h-[1.75em] w-[1.75em] rounded bg-neutral-300 dark:bg-neutral-700" />
                 )}
+
                 <span class="text-base font-medium text-neutral-800 dark:text-neutral-100">
                   {skill.name}
                 </span>

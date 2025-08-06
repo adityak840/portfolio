@@ -9,11 +9,13 @@ import About from "@components/About.astro";
 import "../styles/global.css";
 import Certifications from "@components/Certifications.astro";
 import Skills from "@components/Skills.astro";
+import TechnicalLeadership from "@components/TechnicalLeadership.astro";
 ---
 
 <Layout>
   <Hero {...SITE_CONTENT.hero} />
   <Experience experience={SITE_CONTENT.experience} />
+  <TechnicalLeadership technical={SITE_CONTENT.technical} />
   <Certifications certifications={SITE_CONTENT.certifications} />
   <Projects projects={SITE_CONTENT.projects} />
   <About {...SITE_CONTENT.about} name={SITE_CONTENT.hero.name} />

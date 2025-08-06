@@ -10,6 +10,7 @@ export interface SiteConfig extends HeaderProps {
 export interface SiteContent {
   hero: HeroProps;
   experience: ExperienceProps[];
+  technical: ExperienceProps[];
   projects: ProjectProps[];
   about: AboutProps;
   certifications: CertificationProps[];
@@ -34,11 +35,16 @@ export interface CertificationProps {
 export interface HeroProps {
   name: string;
   linkedin: string;
-  github:string;
+  github: string;
   location: string;
   specialty: string;
   summary: string;
   email: string;
+}
+
+export interface ExperienceNestedSummary {
+  label: string;
+  bullets: string[];
 }
 
 export interface ExperienceProps {
@@ -46,7 +52,7 @@ export interface ExperienceProps {
   position: string;
   startDate: string;
   endDate: string;
-  summary: string | string[];
+  summary: string | (string | ExperienceNestedSummary)[];
 }
 
 export interface ProjectProps {
@@ -54,7 +60,7 @@ export interface ProjectProps {
   summary: string;
   image: string;
   linkPreview?: string;
-  linkSource?: string;
+  linkSource?: { label: string; url: string }[];
 }
 
 export interface AboutProps {

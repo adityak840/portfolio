@@ -1,16 +1,10 @@
 ---
 import type { HeroProps } from "@types";
+import { Icon } from "astro-icon/components";
 type Props = HeroProps;
 
-const { 
-  name, 
-  specialty, 
-  summary, 
-  email, 
-  location, 
-  linkedin, 
-  github 
-} = Astro.props;
+const { name, specialty, summary, email, location, linkedin, github } =
+  Astro.props;
 ---
 
 <section class="py-24" id="hero">
@@ -25,17 +19,21 @@ const {
     {specialty}
   </p>
 
-  {location && (
-    <p class="mb-6 text-sm font-semibold uppercase text-gray-400">{location}</p>
-  )}
+  {
+    location && (
+      <p class="mb-6 text-sm font-semibold text-gray-400 uppercase">
+        {location}
+      </p>
+    )
+  }
 
   <p class="mb-16 max-w-3xl text-base font-normal text-neutral md:text-lg">
     {summary}
   </p>
 
-  <div class="flex items-center gap-6 mb-12">
+  <div class="mb-12 flex items-center gap-6">
     <a
-      class="inline-block rounded-full bg-primary px-8 py-5 text-sm leading-5 font-medium text-white hover:bg-primary-dark transition-colors"
+      class="hover:bg-primary-dark inline-block rounded-full bg-primary px-8 py-5 text-sm leading-5 font-medium text-white transition-colors"
       href={`mailto:${email}`}
       aria-label="Send Email"
     >
@@ -43,28 +41,32 @@ const {
     </a>
 
     {/* Optional social links - display only if provided */}
-    {linkedin && (
-      <a
-        class="text-neutral hover:text-primary transition-colors"
-        href={linkedin}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="LinkedIn Profile"
-      >
-        {/* <Linkedin /> */}
-      </a>
-    )}
+    {
+      linkedin && (
+        <a
+          class="text-neutral transition-colors hover:text-primary"
+          href={linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn Profile"
+        >
+          <Icon name="mdi:linkedin" class="h-6 w-6" />
+        </a>
+      )
+    }
 
-    {github && (
-      <a
-        class="text-neutral hover:text-primary transition-colors"
-        href={github}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="GitHub Profile"
-      >
-        {/* <Github /> */}
-      </a>
-    )}
+    {
+      github && (
+        <a
+          class="text-neutral transition-colors hover:text-primary"
+          href={github}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub Profile"
+        >
+          <Icon name="mdi:github" class="h-6 w-6" />
+        </a>
+      )
+    }
   </div>
 </section>

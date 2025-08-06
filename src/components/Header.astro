@@ -24,7 +24,7 @@ const { siteLogo, navLinks } = Astro.props;
   <button
     type="button"
     id="menu-button"
-    class="px-1.5 text-neutral sm:hidden"
+    class="px-1.5 text-neutral lg:hidden"
     aria-expanded="false"
     aria-controls="main-menu"
   >
@@ -32,10 +32,10 @@ const { siteLogo, navLinks } = Astro.props;
   </button>
 
   <nav
-    class="absolute top-20 right-5 hidden rounded-xl border border-neutral/40 bg-black px-4 py-5 text-neutral sm:static sm:block sm:border-0 sm:bg-transparent sm:p-0"
+    class="absolute top-20 right-5 hidden rounded-xl border border-neutral/40 bg-black px-4 py-5 text-neutral lg:static lg:block lg:border-0 lg:bg-transparent lg:p-0"
     id="main-menu"
   >
-    <ul class="gap-2 sm:flex">
+    <ul class="gap-2 lg:flex">
       {
         navLinks.map((link) => (
           <li class="relative">
