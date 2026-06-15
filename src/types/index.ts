@@ -15,6 +15,25 @@ export interface SiteContent {
   about: AboutProps;
   certifications: CertificationProps[];
   skills: SkillProps[];
+  awards: AwardProps[];
+  education: EducationProps[];
+}
+
+export interface AwardProps {
+  title: string;
+  issuer: string;
+  date: string;
+  description: string;
+  image?: string;
+}
+
+export interface EducationProps {
+  degree: string;
+  institution: string;
+  location: string;
+  date: string;
+  gpa?: string;
+  bullets?: string[];
 }
 
 export interface SkillProps {
@@ -53,6 +72,7 @@ export interface ExperienceProps {
   startDate: string;
   endDate: string;
   summary: string | (string | ExperienceNestedSummary)[];
+  tags?: string[];
 }
 
 export interface ProjectProps {
@@ -61,6 +81,7 @@ export interface ProjectProps {
   image: string;
   linkPreview?: string;
   linkSource?: { label: string; url: string }[];
+  tags?: string[];
 }
 
 export interface AboutProps {

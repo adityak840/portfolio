@@ -1,0 +1,57 @@
+---
+import Section from "./Section.astro";
+import type { EducationProps } from "@types";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  education: EducationProps[];
+}
+
+const { education } = Astro.props;
+---
+
+<Section
+  text="Education"
+  href="education"
+  eyebrow="04 / Foundation"
+  description="Academic background and fundamentals that support the product engineering work."
+>
+  <div class="grid gap-5">
+    {
+      education.map((edu) => (
+        <article class="group flex flex-col gap-5 rounded-2xl border border-white/8 bg-white/[0.035] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:bg-white/[0.055] sm:flex-row sm:items-start sm:gap-6">
+          <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-primary/20 bg-primary/8 transition-transform duration-300 group-hover:scale-105">
+            <Icon name="mdi:school-outline" class="h-6 w-6 text-primary" />
+          </div>
+
+          <div class="flex-grow">
+            <div class="mb-2 flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
+              <div>
+                <p class="text-xs font-bold tracking-[0.18em] text-primary uppercase">
+                  {edu.date}
+                </p>
+                <h3 class="mt-2 font-serif text-2xl font-semibold text-white">
+                  {edu.institution}
+                </h3>
+              </div>
+              {edu.gpa && (
+                <span class="w-fit rounded-full border border-primary/20 bg-primary/8 px-3 py-1 text-xs font-bold text-blue-300">
+                  {edu.gpa}
+                </span>
+              )}
+            </div>
+
+            <p class="mb-4 text-sm leading-7 text-white/60">{edu.degree}</p>
+
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="flex items-center gap-1.5 text-xs font-medium text-white/38">
+                <Icon name="mdi:map-marker-outline" class="h-3.5 w-3.5" />
+                {edu.location}
+              </span>
+            </div>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</Section>

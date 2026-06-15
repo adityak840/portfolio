@@ -5,68 +5,141 @@ type Props = HeroProps;
 
 const { name, specialty, summary, email, location, linkedin, github } =
   Astro.props;
+
+// Split name for the gradient accent on last name
+const nameParts = name.trim().split(" ");
+const firstName = nameParts.slice(0, -1).join(" ");
+const lastName = nameParts[nameParts.length - 1];
+const stats = [
+  { label: "Enterprise Clients", value: "5+" },
+  { label: "Production Routes", value: "31" },
+  { label: "Test Coverage", value: ">80%" },
+  { label: "Bundle Reduction", value: "65%" },
+  { label: "Redux Slices", value: "54" },
+];
 ---
 
-<section class="py-24" id="hero">
-  <h1
-    class="mb-1.5 font-serif text-7xl font-bold tracking-tightest text-white sm:text-8xl md:mb-0 md:text-9xl"
+<section class="pt-14 pb-12 sm:pt-20" id="hero">
+  <div
+    class="relative overflow-hidden rounded-[1.75rem] border border-white/8 bg-[linear-gradient(135deg,rgba(255,255,255,0.055),rgba(255,255,255,0.018))] p-5 shadow-xl shadow-black/20 backdrop-blur-sm sm:p-7 lg:p-9"
   >
-    {name}
-  </h1>
-  <p
-    class="mb-2 font-serif text-4xl leading-[46px] font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl"
-  >
-    {specialty}
-  </p>
-
-  {
-    location && (
-      <p class="mb-6 text-sm font-semibold text-gray-400 uppercase">
-        {location}
-      </p>
-    )
-  }
-
-  <p class="mb-16 max-w-3xl text-base font-normal text-neutral md:text-lg">
-    {summary}
-  </p>
-
-  <div class="mb-12 flex items-center gap-6">
-    <a
-      class="hover:bg-primary-dark inline-block rounded-full bg-primary px-8 py-5 text-sm leading-5 font-medium text-white transition-colors"
-      href={`mailto:${email}`}
-      aria-label="Send Email"
+    <div
+      class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent"
     >
-      Get in Touch
-    </a>
+    </div>
+    <div
+      class="absolute -top-28 right-0 -z-10 h-72 w-72 rounded-full bg-primary/12 blur-3xl"
+    >
+    </div>
 
-    {/* Optional social links - display only if provided */}
-    {
-      linkedin && (
-        <a
-          class="text-neutral transition-colors hover:text-primary"
-          href={linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn Profile"
+    <div class="max-w-4xl">
+      <!-- Status Badge -->
+      <div
+        class="mb-6 inline-flex items-center gap-2.5 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-4 py-1.5"
+      >
+        <span class="relative flex h-1.5 w-1.5">
+          <span
+            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"
+          ></span>
+          <span
+            class="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400"
+          ></span>
+        </span>
+        <span
+          class="text-xs font-semibold tracking-widest text-emerald-400 uppercase"
         >
-          <Icon name="mdi:linkedin" class="h-6 w-6" />
-        </a>
-      )
-    }
+          Open to opportunities · SDE 2 @ Calfus
+        </span>
+      </div>
 
-    {
-      github && (
-        <a
-          class="text-neutral transition-colors hover:text-primary"
-          href={github}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub Profile"
+      <h1
+        class="mb-4 font-serif text-5xl leading-none font-bold text-white sm:text-6xl lg:text-7xl"
+      >
+        {firstName}
+        <span
+          class="bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent"
         >
-          <Icon name="mdi:github" class="h-6 w-6" />
+          {lastName}
+        </span>
+      </h1>
+
+      <p
+        class="mb-5 font-serif text-2xl font-semibold text-white/55 sm:text-3xl"
+      >
+        {specialty}
+      </p>
+
+      <p class="mb-8 max-w-3xl text-base leading-[1.75] text-white/60">
+        {summary}
+      </p>
+
+      <div
+        class="mb-8 grid gap-3 border-y border-white/6 py-4 sm:grid-cols-2 lg:grid-cols-5"
+      >
+        {
+          stats.map(({ label, value }) => (
+            <div>
+              <span class="block font-serif text-2xl font-bold text-white">
+                {value}
+              </span>
+              <span class="mt-1 block text-xs leading-5 text-white/42">
+                {label}
+              </span>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- CTAs -->
+      <div class="flex flex-wrap items-center gap-4">
+        <a
+          href={`mailto:${email}`}
+          aria-label="Send Email"
+          class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-100 hover:shadow-[0_0_24px_rgba(37,99,235,0.35)]"
+        >
+          <Icon name="mdi:email-outline" class="h-4 w-4" />
+          Get in Touch
         </a>
-      )
-    }
+
+        <div class="h-6 w-px bg-white/10"></div>
+
+        <div class="flex items-center gap-3">
+          {
+            linkedin && (
+              <a
+                class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.035] text-white/45 transition-all duration-300 hover:border-white/30 hover:text-white"
+                href={linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
+              >
+                <Icon name="mdi:linkedin" class="h-4.5 w-4.5" />
+              </a>
+            )
+          }
+          {
+            github && (
+              <a
+                class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.035] text-white/45 transition-all duration-300 hover:border-white/30 hover:text-white"
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub Profile"
+              >
+                <Icon name="mdi:github" class="h-4.5 w-4.5" />
+              </a>
+            )
+          }
+          {
+            location && (
+              <span class="flex items-center gap-1.5 text-xs text-white/30">
+                <Icon name="mdi:map-marker-outline" class="h-3.5 w-3.5" />
+                {location}
+              </span>
+            )
+          }
+        </div>
+      </div>
+    </div>
   </div>
 </section>

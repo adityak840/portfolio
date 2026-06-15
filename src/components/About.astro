@@ -2,25 +2,142 @@
 import Section from "./Section.astro";
 import { Image } from "astro:assets";
 import type { AboutProps, HeroProps } from "@types";
+import { Icon } from "astro-icon/components";
 
 type Props = AboutProps & Pick<HeroProps, "name">;
 
 const { description, image, name } = Astro.props;
+const paragraphs = description.trim().split("\n\n");
 ---
 
-<Section text="About Me" href="about">
-  <div class="flex flex-col items-center gap-12 md:flex-row md:gap-8">
-    <p class="w-auto text-base text-neutral md:pr-5">{description}</p>
-    <div
-      class="h-80 w-64 flex-shrink-0 rotate-[5deg] bg-white p-4 md:rotate-[7deg]"
-    >
-      <Image
-        class="object-cover"
-        src={image}
-        width="260"
-        height="260"
-        alt={name}
-      />
+<Section
+  text="About Me"
+  href="about"
+  eyebrow="07 / Profile"
+  description="A concise view of how I think about building products, leading frontend work, and turning complex systems into usable software."
+>
+  <div
+    class="grid gap-10 rounded-[2rem] border border-white/8 bg-white/[0.03] p-6 shadow-xl shadow-black/15 sm:p-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-center"
+  >
+    <!-- Content -->
+    <div>
+      <div class="mb-8">
+        <p
+          class="mb-2 text-sm font-bold tracking-[0.16em] text-primary uppercase"
+        >
+          Full Stack Engineer • Frontend Lead • AI Product Builder
+        </p>
+
+        <h3 class="font-serif text-3xl leading-tight font-semibold text-white">
+          Building enterprise-grade software that scales.
+        </h3>
+      </div>
+
+      <div class="max-w-2xl space-y-6">
+        {
+          paragraphs.map((para) => (
+            <p class="max-w-prose text-sm leading-8 text-white/60">{para}</p>
+          ))
+        }
+      </div>
+
+      <!-- Quick Facts -->
+      <div class="mt-10 grid gap-4 sm:grid-cols-2">
+        {
+          [
+            {
+              icon: "mdi:map-marker-outline",
+              label: "Based In",
+              value: "Pune, Maharashtra",
+            },
+            {
+              icon: "mdi:briefcase-outline",
+              label: "Current Role",
+              value: "SDE 2 @ Calfus",
+            },
+            {
+              icon: "mdi:rocket-launch-outline",
+              label: "Founding Engineer",
+              value: "Built & scaled mvue.ai",
+            },
+            {
+              icon: "mdi:account-group-outline",
+              label: "Leadership",
+              value: "Leading 3 Frontend Engineers",
+            },
+          ].map(({ icon, label, value }) => (
+            <div class="group rounded-2xl border border-white/8 bg-white/[0.03] p-4 transition-all duration-300 hover:border-primary/25 hover:bg-primary/[0.04]">
+              <div class="mb-2 flex items-center gap-2">
+                <Icon
+                  name={icon}
+                  class="h-4 w-4 text-primary/70 transition-colors duration-300 group-hover:text-primary"
+                />
+
+                <p class="text-[10px] font-semibold tracking-[0.15em] text-white/30 uppercase">
+                  {label}
+                </p>
+              </div>
+
+              <p class="text-sm font-medium text-white/75">{value}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- Credentials -->
+      <div class="mt-8 border-t border-white/5 pt-6">
+        <p
+          class="mb-3 text-[11px] font-semibold tracking-[0.15em] text-white/25 uppercase"
+        >
+          Credentials
+        </p>
+
+        <div class="flex flex-wrap gap-3">
+          <div
+            class="group flex items-center gap-3 rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-2.5 transition-all duration-300 hover:border-primary/25 hover:bg-primary/[0.04]"
+          >
+            <img
+              src="/awsccp.png"
+              alt="AWS Certified Cloud Practitioner"
+              class="h-6 w-6 object-contain"
+              loading="lazy"
+            />
+
+            <div>
+              <p class="text-sm font-medium text-white/75">
+                AWS Certified Cloud Practitioner
+              </p>
+
+              <p class="text-xs text-white/40">Amazon Web Services • 2025</p>
+            </div>
+
+            <Icon
+              name="mdi:check-decagram"
+              class="ml-1 h-4 w-4 text-emerald-400"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portrait -->
+    <div class="flex justify-center lg:justify-end lg:self-start">
+      <div
+        class="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-2 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-sm transition-all duration-300 hover:border-primary/20 hover:shadow-[0_20px_60px_rgba(37,99,235,0.12)]"
+      >
+        <div
+          class="absolute inset-x-2 top-2 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent"
+        >
+        </div>
+
+        <Image
+          class="aspect-[4/5] w-64 rounded-[1.25rem] object-cover"
+          src={image}
+          width={320}
+          height={420}
+          alt={name}
+        />
+      </div>
     </div>
   </div>
 </Section>

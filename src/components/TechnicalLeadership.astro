@@ -9,31 +9,58 @@ interface Props {
 const { technical } = Astro.props;
 ---
 
-<Section text="Technical Leadership & Mentorship" href="technical">
-  {
-    technical.map(({ company, position, startDate, endDate, summary }) => (
-      <div class="mb-10">
-        <h3 class="mb-1.5 font-serif text-2xl font-semibold text-white">
-          {company}
-        </h3>
-        <div class="flex flex-col items-start pb-5">
-          <h4 class="mb-0.5 font-serif text-2xl font-medium text-primary">
-            {position}
-          </h4>
-          <span class="pb-[2px] text-sm text-white/70">
-            {startDate} — {endDate}
-          </span>
-        </div>
-        {Array.isArray(summary) ? (
-          <ul class="list-disc space-y-4 pl-6">
-            {summary.map((log) => (
-              <li class="relative mb-3 text-base text-neutral">{log}</li>
-            ))}
-          </ul>
-        ) : (
-          <p class="text-base text-neutral">{summary}</p>
-        )}
-      </div>
-    ))
-  }
+<Section
+  text="Technical Leadership"
+  href="technical"
+  eyebrow="02 / Community"
+  description="Mentorship, student chapter leadership, open-source enablement, and high-traffic event software built for real audiences."
+>
+  <div class="grid gap-5 md:grid-cols-2">
+    {
+      technical.map(
+        ({ company, position, startDate, endDate, summary, tags }) => (
+          <article class="group relative overflow-hidden rounded-2xl border border-white/8 bg-white/[0.035] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/25 hover:bg-white/[0.055]">
+            <div class="absolute top-0 left-6 h-px w-24 bg-gradient-to-r from-cyan-400/70 to-transparent" />
+
+            <div class="mb-5">
+              <div class="mb-4 flex items-center justify-between gap-4">
+                <span class="rounded-full border border-cyan-400/20 bg-cyan-400/8 px-3 py-1 text-xs font-bold text-cyan-300">
+                  {position}
+                </span>
+                <span class="text-xs font-semibold text-white/35">
+                  {startDate} - {endDate}
+                </span>
+              </div>
+              <h3 class="font-serif text-2xl font-semibold text-white">
+                {company}
+              </h3>
+            </div>
+
+            {Array.isArray(summary) ? (
+              <ul class="list-none space-y-3">
+                {summary.map((log) => (
+                  <li class="flex items-start gap-3 text-sm leading-7 text-white/58">
+                    <span class="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300/80" />
+                    <span>{log}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p class="text-sm leading-7 text-white/58">{summary}</p>
+            )}
+
+            {tags && tags.length > 0 && (
+              <div class="mt-6 flex flex-wrap gap-2 border-t border-white/6 pt-4">
+                {tags.map((tag) => (
+                  <span class="rounded-full border border-white/8 bg-white/[0.035] px-3 py-1 text-xs font-semibold text-white/50">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+          </article>
+        ),
+      )
+    }
+  </div>
 </Section>

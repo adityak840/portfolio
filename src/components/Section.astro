@@ -2,16 +2,36 @@
 interface Props {
   text: string;
   href: string;
+  eyebrow?: string;
+  description?: string;
 }
 
-const { text, href } = Astro.props;
+const { text, href, eyebrow, description } = Astro.props;
 ---
 
-<section id={href} class="py-24">
-  <h2
-    class="mb-14 font-serif text-4xl font-bold tracking-tighter text-white md:text-5xl"
+<section id={href} class="scroll-mt-24 py-16 sm:py-20">
+  <div
+    class="mb-10 grid gap-5 border-t border-white/[0.07] pt-8 md:grid-cols-[0.9fr_1.2fr] md:items-end"
   >
-    {text}
-  </h2>
+    <div>
+      {
+        eyebrow && (
+          <p class="mb-3 text-xs font-bold tracking-[0.22em] text-primary uppercase">
+            {eyebrow}
+          </p>
+        )
+      }
+      <h2 class="font-serif text-3xl font-bold text-white md:text-5xl">
+        {text}
+      </h2>
+    </div>
+    {
+      description && (
+        <p class="max-w-2xl text-sm leading-7 text-white/45 md:justify-self-end md:text-right">
+          {description}
+        </p>
+      )
+    }
+  </div>
   <slot />
 </section>

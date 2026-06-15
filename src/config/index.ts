@@ -1,19 +1,20 @@
 import type { SiteConfig, SiteContent } from "../types";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Aditya Khandelwal - Full Stack Developer",
+  title: "Aditya Khandelwal - Full Stack Engineer",
   author: "Aditya Khandelwal",
   description:
-    "Versatile full-stack developer skilled in building scalable web applications.",
+    "Full Stack Engineer specializing in multi-tenant SaaS platforms, real-time systems, and enterprise-scale React/Next.js/Node.js/Golang applications.",
   lang: "en",
   siteLogo: "/aditya-small.png",
   navLinks: [
     { text: "Experience", href: "#experience" },
-    { text: "Technical Leadership & Mentorship", href: "#technical" },
-    { text: "Certifications", href: "#certifications" },
+    { text: "Leadership", href: "#technical" },
+    { text: "Awards", href: "#awards" },
+    { text: "Education", href: "#education" },
     { text: "Projects", href: "#projects" },
     { text: "About", href: "#about" },
-    { text: "Technical Skills", href: "#skills" },
+    { text: "Skills", href: "#skills" },
   ],
   socialImage: "/aditya-small.png",
   canonicalURL: "https://adityakhandelwal.me",
@@ -22,10 +23,10 @@ export const SITE_CONFIG: SiteConfig = {
 export const SITE_CONTENT: SiteContent = {
   hero: {
     name: "Aditya Khandelwal",
-    specialty: "Full Stack Developer",
-    location: "Pune, Maharashtra",
+    specialty: "Full Stack Engineer",
+    location: "Pune, MH",
     summary:
-      "Versatile full-stack developer skilled in building scalable web applications. Passionate about creating user-focused solutions, integrating modern APIs, and continuously pushing the boundaries of technical innovation.",
+      "Full Stack Engineer specializing in multi-tenant SaaS platforms, real-time systems, and enterprise-scale applications. Founding and sole frontend engineer on mvue.ai — an agentic-AI cash-flow optimization platform in production across 5 enterprise clients. Recently promoted to SDE 2 and leading a team of 3 frontend engineers at Calfus.",
     email: "khandelwal.aditya840@gmail.com",
     linkedin: "https://www.linkedin.com/in/khandelwaladitya-/",
     github: "https://github.com/adityak840",
@@ -33,25 +34,64 @@ export const SITE_CONTENT: SiteContent = {
   experience: [
     {
       company: "Calfus Inc.",
+      position: "SDE 2",
+      startDate: "May 2026",
+      endDate: "Present",
+      tags: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS 4",
+        "Design Systems",
+        "Architecture",
+        "Team Leadership",
+        "Mentorship",
+      ],
+      summary: [
+        "Lead frontend architecture, design system, and product delivery across all 5 enterprise clients on the mvue.ai platform.",
+        "Tech lead for a team of 3 frontend engineers — own sprint planning, architecture decisions, code review, and mentorship; unblock the team on auth, state, and design-system patterns established during the platform’s solo build.",
+      ],
+    },
+    {
+      company: "Calfus Inc.",
       position: "Associate Software Engineer",
       startDate: "Jan 2025",
-      endDate: "Present",
+      endDate: "Apr 2026",
+      tags: [
+        "Next.js (App Router)",
+        "TypeScript",
+        "Keycloak SSO",
+        "Server-Sent Events",
+        "Redux Toolkit",
+        "RTK Query",
+        "AG Grid Enterprise",
+        "Tailwind CSS 4",
+        "Radix UI Primitives",
+        "Vitest + RTL",
+        "Pino Logging",
+        "Husky Gates",
+      ],
       summary: [
-        "Contributed across the full stack to two major products, focusing on both product functionality and system architecture.",
         {
-          label: "Background Check Platform",
+          label:
+            "mvue.ai – Cash Flow Optimization Platform (Founding & Sole Frontend Engineer)",
           bullets: [
-            "Enhanced and maintained the codebase used by enterprise clients.",
-            "Developed and deployed the candidate adjudication module to streamline verification workflows.",
+            "Sole frontend engineer for 1+ year — architected and built the frontend from scratch on a multi-tenant, multiapplication platform now running in production across 5 enterprise clients.",
+            "Designed and shipped 31 production routes across 12+ feature modules spanning the cash-flow workflow — including AI-agent audit trails, denial management, and analytics — on Next.js (App Router) with TypeScript strict mode.",
+            "Built multi-tenant Keycloak SSO with per-tenant realm resolution, vault-based credential lookup, JWT session refresh, and federated logout — isolating identity and data across all tenants.",
+            "Engineered a real-time streaming UI for AI agent calls using Server-Sent Events — custom ReadableStream parser, event-driven Redux sync, and full stream lifecycle handling.",
+            "Implemented role-based access control with dynamic feature flags and category-level permission assignment across 13 tenant-scoped application areas.",
+            "Built 15+ enterprise data grids on AG Grid Enterprise with virtual scrolling, server-side pagination, multi-column filtering, and XLSX export — handling tens of thousands of financial records per view.",
+            "Designed and shipped a custom design system of 40+ shared components and 20+ Radix-based UI primitives on Tailwind CSS 4 — the foundation every module is built on.",
+            "Owned the frontend state and quality stack: 54 Redux Toolkit / RTK Query slices, structured Pino logging, Vitest + RTL with >80% test coverage, and Husky pre-commit gates.",
+            "Collaborated on core system design including database schema modeling, microservices architecture, and integration patterns for agentic-AI workflows.",
+            "Drove frontend performance: reduced heavy-route bundle size from ~6MB to ~2MB uncompressed (~65%) by lazy-loading AG Grid and other heavy dependencies behind route-level code splits.",
           ],
         },
         {
-          label:
-            "Mvue.ai – Agentic-AI Cash Flow Optimization Tool (Founding Engineer)",
+          label: "Background Check Platform (Enterprise Client)",
           bullets: [
-            "Led frontend architecture as sole UI developer, building a scalable, responsive multi-tenant interface.",
-            "Deployed at La Clínica de La Raza Hospitals in California with additional enterprise clients in the pipeline.",
-            "Co-designed the system architecture including database schemas and agentic microservices.",
+            "Maintained and enhanced an enterprise background-check platform; designed, developed, and shipped a candidate adjudication module that streamlined background-verification workflows.",
           ],
         },
       ],
@@ -61,9 +101,18 @@ export const SITE_CONTENT: SiteContent = {
       position: "Software Development Intern",
       startDate: "Aug 2023",
       endDate: "Dec 2023",
+      tags: [
+        "React.js",
+        "Golang",
+        "MongoDB",
+        "SQL Connect",
+        "Bootstrap",
+        "Git",
+        "REST APIs",
+      ],
       summary: [
-        "Developed an Applicant Tracking System using React.js, Golang, and MongoDB, which expedited the processing of HR candidates.",
-        "Built an SQL Connect Tool in React.js, enhancing the efficiency of SQL queries for multiple applications.",
+        "Developed an Applicant Tracking System using React.js, Golang, and MongoDB that expedited HR candidate processing.",
+        "Contributed to an SQL Connect Tool in React.js, improving query efficiency across multiple internal applications.",
         "Delivered front-end solutions for several in-house projects.",
       ],
     },
@@ -74,10 +123,15 @@ export const SITE_CONTENT: SiteContent = {
       position: "Projects Head",
       startDate: "Nov 2023",
       endDate: "Nov 2024",
+      tags: [
+        "Project Management",
+        "Team Mentorship",
+        "Git Workflows",
+        "Open Source",
+      ],
       summary: [
-        "Mentored 40+ students and led flagship chapter projects leveraging project management tools.",
-        "Designed 'FFCS Planner' for course simulation and implemented the Laser Tag event slot selection system.",
-        "Promoted open source through the 'Fork This' event and enabled single sign-on (SSO) for CSI web platforms.",
+        "Mentored 40+ students and led flagship chapter initiatives using project management & collaboration tools, ensuring best development practices.",
+        "Promoted open-source contribution through the “Fork This” workshop, mentoring participants on Git fundamentals and open-source workflows.",
       ],
     },
     {
@@ -85,19 +139,45 @@ export const SITE_CONTENT: SiteContent = {
       position: "Core Member",
       startDate: "Mar 2022",
       endDate: "Nov 2023",
-      summary: [
-        "Built and deployed Discord bot 'Spacey' (1,000+ users) and event web apps for chapter events.",
-        "Developed laser tag event platform (2,000+ users) and managed authentication with CSI Accounts.",
-        "Created event web pages for Discover.JS and Hackstory using React.js, Next.js, Tailwind CSS, Framer Motion.",
-        "Supported end-to-end event organization, registration, and communication.",
+      tags: [
+        "React.js",
+        "Next.js",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Socket.IO",
+        "Discord API",
       ],
+      summary: [
+        "Built and deployed Discord bot “Spacey” (1,000+ users) and a laser-tag event platform (2,000+ users) with CSI Accounts authentication.",
+        "Created event web pages for Discover.JS and Hackstory using React.js, Next.js, Tailwind CSS, and Framer Motion.",
+      ],
+    },
+  ],
+  awards: [
+    {
+      title: "Calfus Drive Dynamo Award",
+      issuer: "Calfus Inc.",
+      date: "April 2026",
+      description:
+        "Awarded for exceptional performance, ownership, and impact on the mvue.ai platform; promoted to Software Engineer II within ~16 months of joining.",
+      image: "mdi:trophy-outline",
+    },
+  ],
+  education: [
+    {
+      degree: "B.Tech. Computer Science and Engineering (Specialization: IoT)",
+      institution: "Vellore Institute of Technology",
+      location: "Vellore, Tamil Nadu",
+      date: "July 2025",
+      gpa: "CGPA: 8.47 / 10",
+      bullets: [],
     },
   ],
   projects: [
     {
-      name: "File Transfer App",
+      name: "Multi-Device File Transfer App",
       summary:
-        "Real-time file transfer app enabling drag-and-drop sharing between devices via WebSockets",
+        "Built a real-time, drag-and-drop file transfer app for cross-device sharing over WebSockets. Developed a Node.js + Socket.IO backend with device discovery, 256 KB binary chunking, and explicit transfer acceptance. Created a React + Shadcn UI frontend with device selection, progress tracking, transfer dialogs, and toast notifications.",
       linkPreview: "https://filetransfer.adityakhandelwal.me",
       linkSource: [
         {
@@ -110,20 +190,27 @@ export const SITE_CONTENT: SiteContent = {
         },
       ],
       image: "/filetransfer.png",
+      tags: [
+        "React.js",
+        "Node.js",
+        "Socket.IO",
+        "WebSockets",
+        "Shadcn UI",
+        "Binary Chunking",
+      ],
     },
     {
-      name: "Grievances",
+      name: "Grievances Portal",
       summary:
-        "Responsive Grievance Portal supporting 10,000+ students and faculty.",
+        "Designed and shipped a responsive grievance portal serving 10,000+ students and faculty. Implemented secure authentication with role-based access control and real-time submission/tracking workflows. Improved response times by ~50% through UX iteration; achieved 90% positive user feedback.",
       image: "/grievance.png",
+      tags: ["React.js", "Authentication", "RBAC", "Workflows", "UX Iteration"],
     },
   ],
   about: {
-    description: `
-    Hi, I’m Aditya Khandelwal—a versatile Full-Stack Developer passionate about delivering scalable, high-performing web applications. I specialize in both front-end frameworks like React.js and Next.js and robust back-end systems using Node.js and Golang, with a proven track record of architecting solutions for business-critical products.
+    description: `Hi, I’m Aditya Khandelwal—a Full Stack Engineer (SDE 2) passionate about delivering scalable, high-performing web applications, robust backends, and real-time systems. I specialize in both frontend frameworks like React/Next.js and backend engineering with Node.js/Golang, with a proven track record of architecting solutions for business-critical SaaS products.
 
-    My experience spans building intuitive, user-friendly interfaces with Material UI and Tailwind CSS, integrating third-party APIs, and optimizing databases with MongoDB and SQL. I thrive on solving complex problems, collaborating on impactful projects, and continuously exploring new technologies to drive innovation and excellence in every project I undertake.
-  `,
+As the founding frontend engineer for mvue.ai (an agentic-AI cash-flow optimization platform), I led the frontend architecture from scratch to production across 5 enterprise clients, and now lead a team of 3 frontend engineers. I thrive on solving complex technical challenges, establishing robust quality stacks, and optimizing performance to deliver premium user experiences.`,
     image: "/aditya-big.png",
   },
   certifications: [
@@ -136,26 +223,31 @@ export const SITE_CONTENT: SiteContent = {
   ],
   skills: [
     {
-      category: "Languages",
+      category: "Programming Languages",
       items: [
         { name: "JavaScript", icon: "mdi:language-javascript" },
         { name: "TypeScript", icon: "mdi:language-typescript" },
+        { name: "Golang", icon: "simple-icons:go" },
         { name: "Python", icon: "mdi:language-python" },
         { name: "Java", icon: "mdi:language-java" },
         { name: "C++", icon: "mdi:language-cpp" },
-        { name: "Golang", icon: "simple-icons:go" },
       ],
     },
     {
       category: "Frontend",
       items: [
         { name: "React.js", icon: "mdi:react" },
-        { name: "Redux", icon: "simple-icons:redux" },
-        { name: "Next.js", icon: "simple-icons:nextdotjs" },
+        { name: "Next.js (App Router)", icon: "simple-icons:nextdotjs" },
+        { name: "Redux Toolkit", icon: "simple-icons:redux" },
+        { name: "RTK Query", icon: "simple-icons:redux" },
         { name: "React Native", icon: "mdi:react" },
-        { name: "Material UI", icon: "mdi:palette" },
         { name: "Tailwind CSS", icon: "simple-icons:tailwindcss" },
         { name: "Shadcn", icon: "shadcn" },
+        { name: "Radix UI", icon: "simple-icons:radixui" },
+        { name: "AG Grid Enterprise", icon: "mdi:table-large" },
+        { name: "Recharts", icon: "mdi:chart-line" },
+        { name: "TipTap", icon: "mdi:format-text" },
+        { name: "Framer Motion", icon: "simple-icons:framer" },
       ],
     },
     {
@@ -163,29 +255,43 @@ export const SITE_CONTENT: SiteContent = {
       items: [
         { name: "Node.js", icon: "mdi:nodejs" },
         { name: "Golang", icon: "simple-icons:go" },
+        { name: "Express", icon: "simple-icons:express" },
+        { name: "Socket.IO", icon: "socketIo" },
       ],
     },
     {
       category: "Databases",
       items: [
         { name: "MongoDB", icon: "simple-icons:mongodb" },
-        { name: "SQL", icon: "mdi:database" },
+        { name: "SQL (PostgreSQL / MySQL)", icon: "mdi:database" },
       ],
     },
     {
-      category: "Tools & Platforms",
+      category: "Architecture",
       items: [
+        { name: "RESTful APIs", icon: "mdi:api" },
+        { name: "Server-Sent Events", icon: "mdi:transmission-tower" },
+        { name: "WebSockets", icon: "mdi:lan-connect" },
+        { name: "Microservices", icon: "mdi:cloud-braces" },
+        { name: "Multi-tenant SaaS", icon: "mdi:account-group" },
+        { name: "Agentic-AI integration", icon: "mdi:robot" },
+        { name: "Keycloak SSO", icon: "simple-icons:keycloak" },
+        { name: "RBAC", icon: "mdi:shield-account" },
+      ],
+    },
+    {
+      category: "Testing & Tooling",
+      items: [
+        { name: "Vitest", icon: "simple-icons:vitest" },
+        { name: "React Testing Library", icon: "simple-icons:testinglibrary" },
+        { name: "ESLint", icon: "simple-icons:eslint" },
+        { name: "Husky", icon: "mdi:shield-check" },
+        { name: "Pino", icon: "mdi:math-log" },
         { name: "Git", icon: "mdi:git" },
         { name: "Linux", icon: "mdi:linux" },
         { name: "Docker", icon: "mdi:docker" },
-      ],
-    },
-    {
-      category: "Other",
-      items: [
-        { name: "RESTful APIs", icon: "mdi:api" },
-        { name: "Microservices", icon: "mdi:cloud-braces" },
-        { name: "Socket.IO", icon: "socketIo" },
+        { name: "AWS", icon: "simple-icons:amazonwebservices" },
+        { name: "CI/CD", icon: "mdi:infinity" },
       ],
     },
   ],
