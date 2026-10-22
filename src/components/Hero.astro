@@ -11,11 +11,11 @@ const nameParts = name.trim().split(" ");
 const firstName = nameParts.slice(0, -1).join(" ");
 const lastName = nameParts[nameParts.length - 1];
 const stats = [
-  { label: "Enterprise Clients", value: "5+" },
-  { label: "Production Routes", value: "31" },
-  { label: "Test Coverage", value: ">80%" },
-  { label: "Bundle Reduction", value: "65%" },
-  { label: "Redux Slices", value: "54" },
+  { label: "Enterprise Clients", value: "5" },
+  { label: "Portals Automated", value: "5" },
+  { label: "Clean Extractions", value: "95%+" },
+  { label: "AI Agents Shipped", value: "10" },
+  { label: "Less JavaScript", value: "53%" },
 ];
 ---
 
@@ -35,7 +35,7 @@ const stats = [
     <div class="max-w-4xl">
       <!-- Status Badge -->
       <div
-        class="mb-6 inline-flex items-center gap-2.5 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-4 py-1.5"
+        class="mb-6 inline-flex items-center gap-2.5 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-3 py-1.5 sm:px-4"
       >
         <span class="relative flex h-1.5 w-1.5">
           <span
@@ -46,14 +46,14 @@ const stats = [
           ></span>
         </span>
         <span
-          class="text-xs font-semibold tracking-widest text-emerald-400 uppercase"
+          class="text-[10px] font-semibold tracking-wider text-emerald-400 uppercase sm:text-xs sm:tracking-widest"
         >
           Open to opportunities · SDE 2 @ Calfus
         </span>
       </div>
 
       <h1
-        class="mb-4 font-serif text-5xl leading-none font-bold text-white sm:text-6xl lg:text-7xl"
+        class="mb-4 font-serif text-4xl leading-tight font-bold text-white sm:text-6xl sm:leading-none lg:text-7xl"
       >
         {firstName}
         <span
@@ -64,22 +64,22 @@ const stats = [
       </h1>
 
       <p
-        class="mb-5 font-serif text-2xl font-semibold text-white/55 sm:text-3xl"
+        class="mb-5 font-serif text-lg font-semibold text-white/55 sm:text-2xl lg:text-3xl"
       >
         {specialty}
       </p>
 
-      <p class="mb-8 max-w-3xl text-base leading-[1.75] text-white/60">
+      <p class="mb-8 max-w-3xl text-[15px] leading-7 text-white/60 sm:text-base sm:leading-[1.75]">
         {summary}
       </p>
 
       <div
-        class="mb-8 grid gap-3 border-y border-white/6 py-4 sm:grid-cols-2 lg:grid-cols-5"
+        class="mb-8 grid grid-cols-2 gap-x-4 gap-y-4 border-y border-white/6 py-4 sm:grid-cols-3 lg:grid-cols-5"
       >
         {
           stats.map(({ label, value }) => (
             <div>
-              <span class="block font-serif text-2xl font-bold text-white">
+              <span class="block font-serif text-xl font-bold text-white sm:text-2xl">
                 {value}
               </span>
               <span class="mt-1 block text-xs leading-5 text-white/42">
@@ -101,7 +101,7 @@ const stats = [
           Get in Touch
         </a>
 
-        <div class="h-6 w-px bg-white/10"></div>
+        <div class="hidden h-6 w-px bg-white/10 sm:block"></div>
 
         <div class="flex items-center gap-3">
           {

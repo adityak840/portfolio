@@ -13,8 +13,8 @@ const paragraphs = description.trim().split("\n\n");
 <Section
   text="About Me"
   href="about"
-  eyebrow="07 / Profile"
-  description="A concise view of how I think about building products, leading frontend work, and turning complex systems into usable software."
+  eyebrow="06 / Profile"
+  description="Who I am and what I work on."
 >
   <div
     class="grid gap-10 rounded-[2rem] border border-white/8 bg-white/[0.03] p-6 shadow-xl shadow-black/15 sm:p-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-center"
@@ -25,11 +25,11 @@ const paragraphs = description.trim().split("\n\n");
         <p
           class="mb-2 text-sm font-bold tracking-[0.16em] text-primary uppercase"
         >
-          Full Stack Engineer • Frontend Lead • AI Product Builder
+          AI Agents • Full Stack • Client Work
         </p>
 
-        <h3 class="font-serif text-3xl leading-tight font-semibold text-white">
-          Building enterprise-grade software that scales.
+        <h3 class="font-serif text-2xl leading-tight font-semibold text-white sm:text-3xl">
+          Building AI products that work on real systems.
         </h3>
       </div>
 
@@ -58,12 +58,12 @@ const paragraphs = description.trim().split("\n\n");
             {
               icon: "mdi:rocket-launch-outline",
               label: "Founding Engineer",
-              value: "Built & scaled mvue.ai",
+              value: "Built mvue.ai's frontend",
             },
             {
-              icon: "mdi:account-group-outline",
-              label: "Leadership",
-              value: "Leading 3 Frontend Engineers",
+              icon: "mdi:handshake-outline",
+              label: "Client Work",
+              value: "Discovery, demos, onboarding",
             },
           ].map(({ icon, label, value }) => (
             <div class="group rounded-2xl border border-white/8 bg-white/[0.03] p-4 transition-all duration-300 hover:border-primary/25 hover:bg-primary/[0.04]">
@@ -121,7 +121,7 @@ const paragraphs = description.trim().split("\n\n");
     </div>
 
     <!-- Portrait -->
-    <div class="flex justify-center lg:justify-end lg:self-start">
+    <div class="flex justify-center lg:self-center">
       <div
         class="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-2 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-sm transition-all duration-300 hover:border-primary/20 hover:shadow-[0_20px_60px_rgba(37,99,235,0.12)]"
       >
@@ -131,7 +131,7 @@ const paragraphs = description.trim().split("\n\n");
         </div>
 
         <Image
-          class="aspect-[4/5] w-64 rounded-[1.25rem] object-cover"
+          class="aspect-[4/5] w-64 rounded-[1.25rem] object-cover object-[31%_50%]"
           src={image}
           width={320}
           height={420}
