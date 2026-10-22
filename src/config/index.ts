@@ -4,7 +4,7 @@ export const SITE_CONFIG: SiteConfig = {
   title: "Aditya Khandelwal - Software Engineer",
   author: "Aditya Khandelwal",
   description:
-    "Software engineer at Calfus building healthcare AI agents in Python and leading the frontend of mvue.ai, an agentic AI platform. Author of Grepwise, an MCP server that gives coding assistants the real source of a project's libraries.",
+    "Software engineer at Calfus building AI agents in Python, currently for mvue.ai, an agentic AI platform for healthcare, whose frontend I built and lead. Author of Grepwise, an MCP server that gives coding assistants the real source of a project's libraries.",
   lang: "en",
   siteLogo: "/aditya-small.png",
   navLinks: [
@@ -26,7 +26,7 @@ export const SITE_CONTENT: SiteContent = {
     specialty: "Software Engineer · AI Agents & Full Stack",
     location: "Pune, MH",
     summary:
-      "SDE 2 at Calfus, promoted twice since my 2023 internship. I built the frontend of mvue.ai, an agentic AI platform for healthcare revenue cycle management (RCM), and now build its healthcare AI agents in Python while leading its frontend architecture. I work directly with clients, from discovery calls and demos to onboarding.",
+      "SDE 2 at Calfus, promoted twice since my 2023 internship. I build AI agents in Python, currently for mvue.ai, an agentic AI platform for healthcare revenue cycle management (RCM), whose frontend I built from scratch and lead. I work directly with clients, from discovery calls and demos to onboarding.",
     email: "khandelwal.aditya840@gmail.com",
     linkedin: "https://www.linkedin.com/in/khandelwaladitya-/",
     github: "https://github.com/adityak840",
@@ -50,7 +50,7 @@ export const SITE_CONTENT: SiteContent = {
         "Client Onboarding",
       ],
       summary: [
-        "Built a general-purpose AI browser automation service (Python, FastAPI, Playwright) that turns any authenticated portal into schema-validated JSON for agents to use. New portals need no code changes, and 5 are live.",
+        "Built a general-purpose AI browser automation service (Python, FastAPI, Playwright) that turns any authenticated portal into schema-validated JSON for agents to use. New portals need no code changes.",
         "Recipes for each portal are generated with OpenAI structured outputs and cached, so repeat runs need far fewer LLM calls and stay consistent. Over 95% of runs extract cleanly, and most failures are fixed by updating the recipe.",
         "Handles TOTP, SMS and email OTP logins. Runs on Temporal and PostgreSQL with a Redis cache, deployed with Docker.",
         "Used this service to build an insurance eligibility agent, replacing staff's manual portal-by-portal checks.",
@@ -80,7 +80,7 @@ export const SITE_CONTENT: SiteContent = {
           label:
             "mvue.ai: agentic AI platform for healthcare RCM (founding frontend engineer)",
           bullets: [
-            "Joined as the only frontend engineer on mvue.ai and built the production frontend from scratch with Next.js (App Router) and TypeScript. It now serves 5 enterprise clients.",
+            "Joined as the only frontend engineer on mvue.ai and built the production frontend from scratch with Next.js (App Router) and TypeScript. It now runs in production for enterprise clients.",
             "Shipped the core product areas: AI agent audit trails, denial management, appeals, eligibility and analytics.",
             "Built multi-tenant Keycloak login with a realm per tenant, Vault-stored credentials, JWT refresh and federated logout. Designed the RBAC schema in PostgreSQL, covering roles, permissions and features.",
             "Streamed AI agent output over Server-Sent Events using a custom ReadableStream parser that feeds Redux.",
@@ -203,7 +203,7 @@ export const SITE_CONTENT: SiteContent = {
     },
   ],
   about: {
-    description: `I'm Aditya, an SDE 2 at Calfus. I joined mvue.ai as its only frontend engineer and built the product's frontend from scratch. It now serves 5 enterprise clients in healthcare revenue cycle management.
+    description: `I'm Aditya, an SDE 2 at Calfus. I joined mvue.ai as its only frontend engineer and built the product's frontend from scratch. It now runs in production for enterprise clients in healthcare revenue cycle management.
 
 Today I build the AI side too: a Python service that lets agents log into authenticated portals and pull out structured data, the insurance eligibility agent built on it, and the client conversations that decide what gets built next. Outside work I build tools I use every day, like Grepwise, which gives coding assistants the real source code of the libraries a project depends on.`,
     image: "/aditya-big.png",
