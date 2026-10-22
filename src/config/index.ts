@@ -4,7 +4,7 @@ export const SITE_CONFIG: SiteConfig = {
   title: "Aditya Khandelwal - Software Engineer",
   author: "Aditya Khandelwal",
   description:
-    "Software engineer at Calfus building AI agents in Python, currently for mvue.ai, an agentic AI platform for healthcare, whose frontend I built and lead. Author of Grepwise, an MCP server that gives coding assistants the real source of a project's libraries.",
+    "Software engineer at Calfus building AI agents in Python and production-grade applications for mvue.ai, an agentic AI platform for healthcare. I built its frontend from the ground up and lead its frontend engineering. Author of Grepwise, an MCP server that gives coding assistants the real source of a project's libraries.",
   lang: "en",
   siteLogo: "/aditya-small.png",
   navLinks: [
@@ -26,7 +26,7 @@ export const SITE_CONTENT: SiteContent = {
     specialty: "Software Engineer · AI Agents & Full Stack",
     location: "Pune, MH",
     summary:
-      "SDE 2 at Calfus, promoted twice since my 2023 internship. I build AI agents in Python, currently for mvue.ai, an agentic AI platform for healthcare revenue cycle management (RCM), whose frontend I built from scratch and lead. I work directly with clients, from discovery calls and demos to onboarding.",
+      "SDE 2 at Calfus, promoted twice since joining as an intern in 2023. I build AI agents in Python and develop production-grade applications for mvue.ai, an agentic AI platform for healthcare revenue cycle management (RCM). I built its frontend from the ground up and now lead its frontend engineering. I also work directly with clients, from discovery calls and demos to onboarding.",
     email: "khandelwal.aditya840@gmail.com",
     linkedin: "https://www.linkedin.com/in/khandelwaladitya-/",
     github: "https://github.com/adityak840",
